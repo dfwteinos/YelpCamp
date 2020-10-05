@@ -1,0 +1,27 @@
+/* '.thumbnail img' refers to all the images inside a thumbnail (<div class="thumbnail">) */
+/* We want the images to cover 100% of the thumbnail */
+.thumbnail img{
+	width: 100%;
+}
+
+/* We don't want any padding (spacing) around an image inside of a thumbnail */
+.thumbnail {
+	padding: 0;
+}
+
+/* Select all the caption-fulls (Bootstrap class) inside of a thumbnail*/
+.thumbnail .caption-full {
+	padding: 9px;
+}
+
+ 
+/* forms with id="delete-form" will be displayed inline */
+/*#delete-form {
+	display: inline;
+} */
+/* => In an HTML doc an id can only be used once. If we want to use it more than once,
+	  we turn it into a class*/
+/* forms with class="delete-form" will be displayed inline */
+.delete-form {
+	display: inline;
+}

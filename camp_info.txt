@@ -1,0 +1,14 @@
+name: "Salmon Creek",
+image: "https://www.travelstyle.gr/wp-content/uploads/2018/05/camping-finland.jpg",
+description: "This place is awsome!"
+
+name: "Granite Hill",
+image: "https://pix10.agoda.net/hotelImages/222/2225850/2225850_17051516230052996076.jpg?s=1024x768",
+description: "This is a huge granite hill, no bathrooms. No water. Beautiful granite!"
+
+name: "Mountain Goat's Rest",
+image: "https://images.ferryhopper.com/images/articles/2020/camping/ikaria-camping-cover.jpg"
+
+name: "Cloud's Rest",
+image: "https://flashnews.gr/storage/photos/master/201909/camping.jpg",
+description: "blah blah blah"

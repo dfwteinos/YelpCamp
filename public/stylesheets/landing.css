@@ -1,0 +1,125 @@
+/* We set the background color as black */
+body {
+  background-color: #000;
+}
+
+#landing-header {
+  /* The web page can be viewed on a 3 dimensional plain: x(left,right),y(up,down),z(forward,backward) */
+  /* If we give a z-index:1 the showing image will becoming towards us, layring anything with z-index < 1*/
+  z-index: 1;
+  /* The default position value for all html elements is static => it ignores the z-index display */
+  position: relative;
+  text-align: center;
+  /* Center the context */
+  padding-top: 40vh;
+}
+
+/* We set the <h1> header's color as white */
+#landing-header h1 {
+  color: #fff;
+}
+
+/* We want to style the unordered list => slideshow */
+.slideshow { 
+  position: fixed;
+  /* We want it to cover the entire page => width,height: 100% */
+  width: 100%;
+  height: 100%;
+  /* We nudge it up at the top left corner of the page */
+  top: 0;
+  left: 0;
+  /* This will make sure that the background images will be behind other content */
+  z-index: 0;
+  /* This will remove the list bullets so that we don't see them as bullet items */
+  list-style: none;
+  /* We wanna make sure that there won't be any margin or padding */
+  margin: 0;
+  padding: 0;
+}
+
+/* We want to style the list items themselves => the same .slideshow class we have for the list */
+/* and then we are telling it to select each html item of the unordered list (li) */
+.slideshow li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* This will allow the images to take up the entire space of the page */
+  background-size: cover;
+  /* This will center the images perfectly on the page */
+  background-position: 50% 50%;
+  /* The images won't be repeating vertically or horizontically */
+  background-repeat: no-repeat;
+  /* We want our images to start faded out and we will use the animation to slowly fade them in */
+  /* to an opacity of 1 */
+  opacity: 0;
+  /* This will make sure that the background images will be behind other content */
+  z-index: 0;
+  /* animation will allow us to fade the images in and out */
+  /* imageAnimation is the name we give to the animation we will create */
+  /* It will last 50s and it'll be lenear (= will have the same speed from beginning to end) */
+  /* We tell out=r animation to loop infinately */
+  animation: imageAnimation 50s linear infinite; 
+}
+
+/* We add the background images to the actual list items */
+/* The first image will start immediatly but the other 4 will fade in after 10sec of the previous image */
+/* so we add an animation delay to each of them */
+.slideshow li:nth-child(1) { 
+  background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  animation-delay: 40s; 
+}
+
+/* We take the @keyframes selector and we give it the name of the animation that we used */
+/* in the .slideshow li rule */
+/* We indicate what we want to happen at various keyframes animation */
+/* Animation goes all the way from 0% to 100% but we are only concerned with 0%-30%: */
+/* Each image lasts 10s, 0s-5s it fades in (0%-10% animation), 5s-10s it stays at opacity 1 (10%-20%) */
+/* and 10s-15s it fades out (20%-30%) while the next image fades in (0%-10%) and so on untill in 50s */
+/* all the images have appeared and in the next loop where the 1st image fades in the 5th image fades out*/
+@keyframes imageAnimation {
+  /* We start our animation at 0 opacity */
+  0% { 
+    opacity: 0;
+    /* This gives us a more smooth transition from 0 to 1 opacity */
+    animation-timing-function: ease-in;
+  }
+  /* And all the way up to 10% we let it fade in to an opacity of 1 */
+  10% {
+    opacity: 1;
+    /* This gives us a more smooth transition from 0 to 1 opacity */
+    animation-timing-function: ease-out;
+  }
+  /* We leave the opacity to 1 all the way to 20% */
+  20% {
+    opacity: 1
+  }
+  /* And then we fade it back out to 0 opacity through 30% */
+  30% {
+    opacity: 0
+  }
+}
+
+/* We make sure that our background slider works on all browsers */
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+    /* Browsers that do not support css animation will jiust have 1 slide visible that will be */
+    /* the page background */
+	opacity: 1;
+}
