@@ -40,3 +40,8 @@ can meet the requirements of the most demanding user.
 ## Alternatively, check this demo with Heroku:
 
 `Working on it`
+
+
+## _P.S:_ 
+
+This project contains also the [certificate](https://github.com/dfwteinos/YelpCamp/blob/master/certificate.pdf) of this [specific course](https://www.udemy.com/course/the-web-developer-bootcamp/) from Udemy.
