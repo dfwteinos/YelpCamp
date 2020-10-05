@@ -32,7 +32,8 @@ can meet the requirements of the most demanding user.
 
 ## Run the app localy using GoormeIDE:
 
-* First of all, you need to enable MongoDB within your container. If you have a problem, then [click here](https://help.goorm.io/en/goormide/18.faq/language-and-environment/how-to-install-mongodb).
+* First of all, you must download the code as follows: `git clone https://github.com/dfwteinos/YelpCamp.git `
+* Also, you need to enable MongoDB within your container. If you have a problem, then [click here](https://help.goorm.io/en/goormide/18.faq/language-and-environment/how-to-install-mongodb).
 * Then, open a terminal and type `mongod` and then press enter.
 * Afterwards, you should type into an another terminal `node app.js` and start running the server.
 * Last but not least, you should click on `Project` (on the toolbar) and then running URL and Port. Additionally , check [this video](https://www.youtube.com/watch?v=6CYTQm-6t9w)
